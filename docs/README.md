@@ -14,7 +14,7 @@ LEDs are typically not very efficient when driven with just a few uA of current.
 
 ![Efficiency Curve](/docs/images/chanzon_3W_efficiencycyan.png "Efficiency Curve")
 
-You can see that this LED is most efficient at around 20 mA, even though it is rated for 350 mA.  But, driving the LED at 20mA continuously would only last around 10 hours with a CR2032: not very good.  So, instead, the circuit drives the LED with brief pulses near the optimum 20 mA.  The pulses are ar a high enough frequency that the LED appears to glow steadily, but of short enough duration so that the average current drain is less than 10uA (and less than 5uA in some cases).  This allows the markers to run for years on a single cell.
+You can see that this LED is most efficient at around 20 mA, even though it is rated for 350 mA.  But, driving the LED at 20mA continuously would only last around 10 hours with a CR2032: not very good.  So, instead, the circuit drives the LED with brief pulses near the optimum 20 mA.  The pulses are ar a high enough frequency that the LED appears to glow steadily, but of short enough duration so that the average current drain is less than 10uA (and less than 5uA in some cases).  This allows the markers to run for years on a single cell. Incidentally, the choice of LED color is also very important.  Cyan LEDs are close to the dark-adapted sensitivity peak of the human eye at 507ns, so they can appear much brighter than other colors in the dark.  Green LEDs are close to the light-adapted peak, so they are more useful in brighter environments.  
 
 The schematic of the V2.2 is shown below.  A PIC microprocessor generates the pulses controlling a simple voltage converter consisting of a MOSFET and inductor which drives the LED:
 
