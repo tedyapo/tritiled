@@ -51,4 +51,5 @@ and OpenSCAD and STL files for a 3D-printable case:
 More Info
 =========
 
-Much more infromation can be found on [this project's hackaday.io page](https://hackaday.io/project/11864-tritiled).
+Much more infromation can be found on [this project's hackaday.io page](https://hackaday.io/project/11864-tritiled).  
+See also this derivation which uses an ATtiny45 microcontroller: ![everled](https://github.com/hexagon5un/everled)
