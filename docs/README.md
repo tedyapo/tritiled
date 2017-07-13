@@ -1,8 +1,12 @@
 Overview
 ========
-TritiLEDs are optimized LED glow markers designed to last for multiple years on a single lithium coin cell.  They can be used where you need something to be noticeable in the dark - my first application was marking telescope tripod legs so I wouldn't trip over them.  The V2.2 release can either run for more than 2.5 years on a CR2032 cel at a good brightness with selectable blinking modes, or can be programmed to run for more than 5 years at a lower intensity. Here's a picture of two V2.2 boards, one in a 3D-printed case: 
+TritiLEDs are optimized LED glow markers designed to last for multiple years on a single lithium coin cell.  They can be used whereever you need to mark something in the dark - my first application was marking telescope tripod legs so I wouldn't trip over them.  The V2.2 release can either run for more than 2.5 years on a CR2032 cell at a very visible brightness with selectable blinking modes, or can be programmed to run for more than 5 years at a lower intensity. Here's a picture of two V2.2 boards, one in a 3D-printed case: 
 
 ![TritiLEDs](/docs/images/tritiled22_photo.jpg "Tritiled V2.2")
+
+Caution
+=======
+Any project using lithium coin cells can be **extremely dangerous** to children or pets.  The [Energizer CR2032 datasheet](http://data.energizer.com/pdfs/cr2032.pdf) states that **an ingested cell can cuase serious injury or death in as little as 2 hours**.  If you build any devices like the one described here, you must ensure that the battery can not be accessed by children or pets.  The recommended method is to use screws to secure the battery compartment, which means the board must be enclosed in a case.  The 3D printed case described below may not provide adequate protection from the battery: you use this design at your own risk.  Be careful out there, people :-)
 
 How it Works
 ============
