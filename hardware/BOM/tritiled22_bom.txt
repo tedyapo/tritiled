@@ -1,0 +1,21 @@
+(1) PIC12LF1571 8-SOIC 
+      DigiKey part # PIC12LF1571-I/SN-ND $0.57 each
+(1) Wurth 744062102 1mH inductor
+      DigiKey part # 732-3676-1-ND $1.57 each
+(1) 10uF 25V 1206 X7R MLCC capacitor
+      DigiKey part # 1276-1804-1-ND $0.26 each
+(1) 0.1uF 25V 0805 X7R MLCC capacitor
+      DigiKey part #311-1141-1-ND $0.10 each
+(1) 100 ohm 1206 resistor
+      DigiKey part # 311-100FRCT-ND $0.10 each
+(1) ZXMN3B01FTA N-channel SOT23 MOSFET
+      DigiKey part # ZXMN3B01FCT-ND $0.60 each
+(1) DMG2305UX P-channel SOT23 MOSFET
+      DigiKey part # DMG2305UX-13DICT-ND $0.44 each
+(1) CR2032 Battery retainer
+      Digikey part # BK-912-G-TR $0.63 each
+(1) Switch E-Switch #TL3305BF260QG
+      Digikey part # EG5354CT-ND $0.21 each
+(1) CHANZON 3W LED (cyan is best).
+    Find them on Amazon : $9.52/10, AliExpress : $7.90/10, or Ebay (various sellers/prices)
+(1) PCB. Order from OSH Park. $6.15 for 3.
