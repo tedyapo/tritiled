@@ -119,7 +119,7 @@
 <library name="led_temp">
 <packages>
 <package name="ICSP_PAD">
-<smd name="P$2" x="0" y="0" dx="2.54" dy="2.54" layer="1" roundness="100"/>
+<smd name="P$2" x="0" y="0" dx="2.54" dy="2.54" layer="1" roundness="100" cream="no"/>
 <text x="2.54" y="0" size="1.27" layer="25">&gt;NAME</text>
 </package>
 </packages>
@@ -191,6 +191,26 @@
 </polygon>
 <text x="5.08" y="2.54" size="1.27" layer="25">&gt;NAME</text>
 <text x="5.08" y="0" size="1.27" layer="27">&gt;VALUE</text>
+<polygon width="0.3048" layer="31" spacing="0.6096">
+<vertex x="-3.65" y="3.65"/>
+<vertex x="3.65" y="3.65"/>
+<vertex x="3.65" y="1.05"/>
+<vertex x="2.5" y="1.05" curve="90"/>
+<vertex x="0" y="2.7" curve="94.422201"/>
+<vertex x="-2.5" y="1.05"/>
+<vertex x="-3.65" y="1.05"/>
+</polygon>
+<wire x1="-2.68" y1="1.06" x2="2.66" y2="1.09" width="0.4064" layer="31" curve="-135.021028" cap="flat"/>
+<polygon width="0.127" layer="31">
+<vertex x="3.65" y="-3.65"/>
+<vertex x="-3.65" y="-3.65"/>
+<vertex x="-3.65" y="-1.05"/>
+<vertex x="-2.5" y="-1.05" curve="90"/>
+<vertex x="0" y="-2.7" curve="94.422201"/>
+<vertex x="2.5" y="-1.05"/>
+<vertex x="3.65" y="-1.05"/>
+</polygon>
+<wire x1="2.68" y1="-1.06" x2="-2.66" y2="-1.09" width="0.4064" layer="31" curve="-135.021028" cap="flat"/>
 </package>
 <package name="CR2032_BAT-HLD_001">
 <smd name="GND" x="0" y="0" dx="17.78" dy="17.78" layer="1" roundness="100"/>
@@ -717,6 +737,41 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="13.6525" y1="3.8475" x2="13.6525" y2="3.175" width="1.27" layer="1"/>
 </signal>
 </signals>
+<errors>
+<approved hash="3,1,9d885c705c3f9dc7"/>
+<approved hash="3,1,9d045cfc5cb99d41"/>
+<approved hash="18,29,74610db60c2df45b"/>
+<approved hash="18,29,a6bcc6b6fb3103ee"/>
+<approved hash="18,29,46bcc2f0593546f3"/>
+<approved hash="18,29,2ab6aef6accbaa01"/>
+<approved hash="18,29,dc06910556211916"/>
+<approved hash="18,29,9ef8973a2afaaf83"/>
+<approved hash="18,29,156997ad93569a0e"/>
+<approved hash="18,29,24fd44d50f755b5f"/>
+<approved hash="19,1,190b530d7005511e"/>
+<approved hash="19,1,995601ea24b5c507"/>
+<approved hash="6,1,1bad6c84dc340d48"/>
+<approved hash="6,1,deb6ce1f3ab53c48"/>
+<approved hash="6,1,8a7027fe8c3439da"/>
+<approved hash="6,1,9e29c5792f0a86be"/>
+<approved hash="6,1,d210c0a5853a62de"/>
+<approved hash="6,1,30938fa18627c043"/>
+<approved hash="6,1,c4031e3e3bf9d834"/>
+<approved hash="6,1,f9f2475974b54516"/>
+<approved hash="6,1,b6efa5c4d6314615"/>
+<approved hash="6,1,2bca294130ce6a1f"/>
+<approved hash="6,1,4bd122a704572a61"/>
+<approved hash="6,1,b84da97f6c801db8"/>
+<approved hash="6,1,1acd6c7e5d9bfb23"/>
+<approved hash="6,1,844de388e533a7fc"/>
+<approved hash="19,16,876df9f771f24795"/>
+<approved hash="19,16,c4fec00fcc0ac8fb"/>
+<approved hash="19,16,062901d80ddd0a2c"/>
+<approved hash="19,16,474e43bf4fa44b55"/>
+<approved hash="19,16,541fb12cbd29581a"/>
+<approved hash="19,16,96c870fb7cfe9acd"/>
+<approved hash="19,16,d7af329c3e87dbb4"/>
+</errors>
 </board>
 </drawing>
 </eagle>

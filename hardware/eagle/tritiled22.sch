@@ -8,20 +8,20 @@
 </settings>
 <grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
-<layer number="1" name="Top" color="4" fill="1" visible="yes" active="no"/>
-<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="no"/>
-<layer number="17" name="Pads" color="2" fill="1" visible="yes" active="no"/>
-<layer number="18" name="Vias" color="2" fill="1" visible="yes" active="no"/>
-<layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="no"/>
-<layer number="20" name="Dimension" color="15" fill="1" visible="yes" active="no"/>
-<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="no"/>
-<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="no"/>
-<layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="no"/>
-<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="no"/>
-<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="no"/>
-<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="no"/>
-<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="no"/>
-<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="no"/>
+<layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="no" active="no"/>
+<layer number="17" name="Pads" color="2" fill="1" visible="no" active="no"/>
+<layer number="18" name="Vias" color="2" fill="1" visible="no" active="no"/>
+<layer number="19" name="Unrouted" color="6" fill="1" visible="no" active="no"/>
+<layer number="20" name="Dimension" color="15" fill="1" visible="no" active="no"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="no" active="no"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="no" active="no"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="no" active="no"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="no"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="no" active="no"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="no" active="no"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="no" active="no"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="no" active="no"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="no"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="no"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="no" active="no"/>
@@ -30,8 +30,8 @@
 <layer number="34" name="bFinish" color="6" fill="6" visible="no" active="no"/>
 <layer number="35" name="tGlue" color="7" fill="4" visible="no" active="no"/>
 <layer number="36" name="bGlue" color="7" fill="5" visible="no" active="no"/>
-<layer number="37" name="tTest" color="7" fill="1" visible="yes" active="no"/>
-<layer number="38" name="bTest" color="7" fill="1" visible="yes" active="no"/>
+<layer number="37" name="tTest" color="7" fill="1" visible="no" active="no"/>
+<layer number="38" name="bTest" color="7" fill="1" visible="no" active="no"/>
 <layer number="39" name="tKeepout" color="4" fill="11" visible="no" active="no"/>
 <layer number="40" name="bKeepout" color="1" fill="11" visible="no" active="no"/>
 <layer number="41" name="tRestrict" color="4" fill="10" visible="no" active="no"/>
@@ -39,12 +39,12 @@
 <layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="no"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="no"/>
 <layer number="45" name="Holes" color="7" fill="1" visible="no" active="no"/>
-<layer number="46" name="Milling" color="3" fill="1" visible="yes" active="no"/>
-<layer number="47" name="Measures" color="7" fill="1" visible="yes" active="no"/>
-<layer number="48" name="Document" color="7" fill="1" visible="yes" active="no"/>
-<layer number="49" name="Reference" color="7" fill="1" visible="yes" active="no"/>
-<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="no"/>
-<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="no"/>
+<layer number="46" name="Milling" color="3" fill="1" visible="no" active="no"/>
+<layer number="47" name="Measures" color="7" fill="1" visible="no" active="no"/>
+<layer number="48" name="Document" color="7" fill="1" visible="no" active="no"/>
+<layer number="49" name="Reference" color="7" fill="1" visible="no" active="no"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="no" active="no"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="no" active="no"/>
 <layer number="90" name="Modules" color="5" fill="1" visible="yes" active="yes"/>
 <layer number="91" name="Nets" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="92" name="Busses" color="1" fill="1" visible="yes" active="yes"/>
@@ -89,7 +89,7 @@
 <library name="led_temp">
 <packages>
 <package name="ICSP_PAD">
-<smd name="P$2" x="0" y="0" dx="2.54" dy="2.54" layer="1" roundness="100"/>
+<smd name="P$2" x="0" y="0" dx="2.54" dy="2.54" layer="1" roundness="100" cream="no"/>
 <text x="2.54" y="0" size="1.27" layer="25">&gt;NAME</text>
 </package>
 </packages>
@@ -185,6 +185,26 @@
 </polygon>
 <text x="5.08" y="2.54" size="1.27" layer="25">&gt;NAME</text>
 <text x="5.08" y="0" size="1.27" layer="27">&gt;VALUE</text>
+<polygon width="0.3048" layer="31" spacing="0.6096">
+<vertex x="-3.65" y="3.65"/>
+<vertex x="3.65" y="3.65"/>
+<vertex x="3.65" y="1.05"/>
+<vertex x="2.5" y="1.05" curve="90"/>
+<vertex x="0" y="2.7" curve="94.422201"/>
+<vertex x="-2.5" y="1.05"/>
+<vertex x="-3.65" y="1.05"/>
+</polygon>
+<wire x1="-2.68" y1="1.06" x2="2.66" y2="1.09" width="0.4064" layer="31" curve="-135.021028" cap="flat"/>
+<polygon width="0.127" layer="31">
+<vertex x="3.65" y="-3.65"/>
+<vertex x="-3.65" y="-3.65"/>
+<vertex x="-3.65" y="-1.05"/>
+<vertex x="-2.5" y="-1.05" curve="90"/>
+<vertex x="0" y="-2.7" curve="94.422201"/>
+<vertex x="2.5" y="-1.05"/>
+<vertex x="3.65" y="-1.05"/>
+</polygon>
+<wire x1="2.68" y1="-1.06" x2="-2.66" y2="-1.09" width="0.4064" layer="31" curve="-135.021028" cap="flat"/>
 </package>
 <package name="CR2032_BAT-HLD_001">
 <smd name="GND" x="0" y="0" dx="17.78" dy="17.78" layer="1" roundness="100"/>
@@ -902,8 +922,13 @@
 </sheet>
 </sheets>
 <errors>
-<approved hash="104,1,-50.8,33.02,U$6,0V,GND,,,"/>
-<approved hash="104,1,-50.8,50.8,U$6,+V,VBATT,,,"/>
+<approved hash="102,1,66.04,73.66,+3.6V,+3.3V,,,,"/>
+<approved hash="102,1,-10.16,53.34,+3.6V,+3.3V,,,,"/>
+<approved hash="102,1,-63.5,71.12,+3.6V,+3.3V,,,,"/>
+<approved hash="102,1,157.48,99.06,+3.6V,+3.3V,,,,"/>
+<approved hash="102,1,-27.94,53.34,+3.6V,+3.3V,,,,"/>
+<approved hash="104,1,-116.84,33.02,B1,0V,GND,,,"/>
+<approved hash="104,1,-116.84,50.8,B1,+V,VBATT,,,"/>
 </errors>
 </schematic>
 </drawing>
