@@ -26,16 +26,29 @@ You can order all the parts you need to build a TritiLED from this list. You nee
 
 * PCB. [Order from OSH Park](https://www.oshpark.com/shared_projects/JiXnQwL2) $6.15 for 3.
 * PIC12LF1571 8-SOIC [DigiKey part # PIC12LF1571-I/SN-ND](https://www.digikey.com/products/en?keywords=PIC12LF1571-I%2FSN-ND) $0.57 each
-* Wurth 744062102 1mH inductor [DigiKey part # 732-3676-1-ND](https://www.digikey.com/product-detail/en/wurth-electronics-inc/744062102/732-3676-1-ND/2931732) $1.57 each
 * 10uF 25V 1206 X7R MLCC capacitor [DigiKey part # 1276-1804-1-ND](https://www.digikey.com/products/en?keywords=1276-1804-1-ND) $0.26 each
 * 0.1uF 25V 0805 X7R MLCC capacitor [DigiKey part #311-1141-1-ND](https://www.digikey.com/products/en?keywords=%20311-1141-1-ND) $0.10 each
 * 100 ohm 1206 resistor [DigiKey part # 311-100FRCT-ND](https://www.digikey.com/products/en?keywords=311-100FRCT-ND) $0.10 each
 * ZXMN3B01FTA N-channel SOT23 MOSFET [DigiKey part # ZXMN3B01FCT-ND](https://www.digikey.com/products/en?keywords=ZXMN3B01FCT-ND) $0.60 each
 * DMG2305UX P-channel SOT23 MOSFET [DigiKey part # DMG2305UX-13DICT-ND](https://www.digikey.com/product-detail/en/diodes-incorporated/DMG2305UX-13/DMG2305UX-13DICT-ND/4251589) $0.44 each
-* CR2032 Battery retainer [Digikey part # BK-912-G-TR](https://www.digikey.com/product-detail/en/mpd-memory-protection-devices/BK-912-G-TR/BK-912-G-CT-ND/5032044) $0.63 each
+
 * Switch E-Switch #TL3305BF260QG [Digikey part # EG5354CT-ND](https://www.digikey.com/products/en?keywords=eg5354ct-nd) $0.21 each
 * CHANZON 3W LED (cyan is best). Find them on [Amazon : $9.52/10](https://www.amazon.com/Chanzon-10pcs-Power-Floodlight-Spotlight/dp/B01DBZIH64/ref=sr_1_2?ie=UTF8&qid=1482702919&sr=8-2&keywords=cyan+led), [AliExpress : $7.90/10](https://www.aliexpress.com/store/product/High-Power-LED-Chip-3W-5W-10W-20W-30W-50W-100W-Cyan-COB-LED-Beads-Bulb/1913069_32630486294.html), or Ebay (various sellers/prices)
 
+Choose ONE battery holder:
+* CR2032 Battery retainer [Digikey part # BK-912-G-TR](https://www.digikey.com/product-detail/en/mpd-memory-protection-devices/BK-912-G-TR/BK-912-G-CT-ND/5032044) $0.63 each
+
+*OR*
+
+* Linx BAT-HLD-001-TR CR2032 battery holder. [DigKey part # BAT-HLD-001-TRCT-ND](https://www.digikey.com/product-detail/en/linx-technologies-inc./bat-hld-001-tr/bat-hld-001-trct-nd/5803803) $0.73 each.
+
+Choose ONE inductor:
+
+* Wurth 744062102 1mH inductor [DigiKey part # 732-3676-1-ND](https://www.digikey.com/product-detail/en/wurth-electronics-inc/744062102/732-3676-1-ND/2931732) $1.57 each
+
+*OR*
+
+* Bourns SRR6028-102Y 1mH inductor [Mouser part # 652-SRR6028-102Y](http://www.mouser.com/ProductDetail/Bourns/SRR6028-102Y/?qs=%2fha2pyFaduiqTRitWcfc%2fBRjysclL8p%2fmvyGER5hqKox8ZVeTgAj2Q%3d%3d) $0.68 each
 
 
 Design Files
