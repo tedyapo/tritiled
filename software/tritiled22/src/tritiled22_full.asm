@@ -13,7 +13,7 @@
 ;;;
 ;;; N: number of base LED pulses per wake-up
 ;;; 
-N            equ   .1
+N            equ   .2
 
 ;;;
 ;;; OSCTUNE_VAL: set to fine-tune current draw for compensating for
