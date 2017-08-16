@@ -216,6 +216,18 @@
 <wire x1="-10.541" y1="-8.128" x2="-10.541" y2="7.366" width="0.254" layer="51"/>
 <circle x="0" y="0" radius="10.0076" width="0.254" layer="21"/>
 </package>
+<package name="LUXEON_C">
+<smd name="HS" x="0" y="0" dx="0.5" dy="1.7" layer="1"/>
+<smd name="C" x="0.725" y="0" dx="0.25" dy="1.7" layer="1"/>
+<smd name="A" x="-0.725" y="0" dx="0.25" dy="1.7" layer="1"/>
+<wire x1="-1" y1="1" x2="0.425" y2="1" width="0.127" layer="21"/>
+<wire x1="0.425" y1="1" x2="1" y2="1" width="0.127" layer="21"/>
+<wire x1="1" y1="1" x2="1" y2="-1" width="0.127" layer="21"/>
+<wire x1="1" y1="-1" x2="0.425" y2="-1" width="0.127" layer="21"/>
+<wire x1="0.425" y1="-1" x2="-1" y2="-1" width="0.127" layer="21"/>
+<wire x1="-1" y1="-1" x2="-1" y2="1" width="0.127" layer="21"/>
+<wire x1="0.425" y1="1" x2="0.425" y2="-1" width="0.127" layer="21"/>
+</package>
 <package name="LED_3W">
 <circle x="0" y="0" radius="4" width="0.127" layer="21"/>
 <circle x="0" y="0" radius="3" width="0.127" layer="21"/>
@@ -351,6 +363,15 @@
 <wire x1="1.4" y1="-0.7" x2="-1.4" y2="-0.7" width="0.127" layer="21"/>
 <wire x1="-1.4" y1="-0.7" x2="-1.4" y2="0.7" width="0.127" layer="21"/>
 </package>
+<package name="LUXEON_Z">
+<smd name="C" x="-0.475" y="0" dx="0.45" dy="1.5" layer="1" roundness="25" thermals="no"/>
+<smd name="A" x="0.475" y="0" dx="0.45" dy="1.5" layer="1" roundness="25" thermals="no"/>
+<wire x1="-0.65" y1="0.85" x2="0.65" y2="0.85" width="0.1" layer="51"/>
+<wire x1="0.65" y1="0.85" x2="0.65" y2="-0.85" width="0.1" layer="51"/>
+<wire x1="0.65" y1="-0.85" x2="-0.65" y2="-0.85" width="0.1" layer="51"/>
+<wire x1="-0.65" y1="-0.85" x2="-0.65" y2="0.85" width="0.1" layer="51"/>
+<wire x1="-0.879" y1="0.655" x2="-0.879" y2="-0.665" width="0.1" layer="21"/>
+</package>
 </packages>
 <symbols>
 <symbol name="L-US">
@@ -377,7 +398,7 @@
 <wire x1="-2.54" y1="6.35" x2="-2.54" y2="3.81" width="0.254" layer="94"/>
 <wire x1="-3.81" y1="5.08" x2="-1.27" y2="5.08" width="0.254" layer="94"/>
 </symbol>
-<symbol name="LED_3W">
+<symbol name="LED">
 <pin name="A" x="0" y="7.62" visible="off" length="middle" rot="R270"/>
 <pin name="C" x="0" y="-7.62" visible="off" length="middle" rot="R90"/>
 <wire x1="-2.54" y1="2.54" x2="2.54" y2="2.54" width="0.254" layer="94"/>
@@ -518,12 +539,30 @@
 </device>
 </devices>
 </deviceset>
-<deviceset name="LED_3W" prefix="D" uservalue="yes">
+<deviceset name="LED" prefix="D" uservalue="yes">
 <gates>
-<gate name="G$1" symbol="LED_3W" x="0" y="0"/>
+<gate name="G$1" symbol="LED" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="LED_3W">
+<device name="3W" package="LED_3W">
+<connects>
+<connect gate="G$1" pin="A" pad="A"/>
+<connect gate="G$1" pin="C" pad="C"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="LUXEON_Z" package="LUXEON_Z">
+<connects>
+<connect gate="G$1" pin="A" pad="A"/>
+<connect gate="G$1" pin="C" pad="C"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="LUXEON_C" package="LUXEON_C">
 <connects>
 <connect gate="G$1" pin="A" pad="A"/>
 <connect gate="G$1" pin="C" pad="C"/>
@@ -706,7 +745,7 @@
 <part name="U$7" library="tritiled" deviceset="+3.0V" device=""/>
 <part name="U$8" library="z0" deviceset="GND" device=""/>
 <part name="U$11" library="z0" deviceset="GND" device=""/>
-<part name="D1" library="tritiled" deviceset="LED_3W" device="" value="Chanzon 3W"/>
+<part name="D1" library="tritiled" deviceset="LED" device="LUXEON_C" value="Luxeon C"/>
 <part name="L1" library="tritiled" deviceset="SRR6028_INDUCTOR" device="" value="1m"/>
 <part name="U$13" library="tritiled" deviceset="+3.0V" device=""/>
 <part name="U$14" library="tritiled" deviceset="+3.0V" device=""/>
