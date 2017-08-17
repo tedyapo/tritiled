@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BOARDS=(tritiled22 tritiled22_lux_c tritiled22_5630 tritiled22_lux_z tritiled2x_programmer)
+BOARDS=(tritiled22 tritiled22_lux_c tritiled22_5630 tritiled22_lux_z tritiled22_xpe tritiled2x_programmer)
 OSHP_FILES=(GTL GBL GTS GBS GTO GBO GKO DRL)
 STENCIL_FILES=(GTP)
 
