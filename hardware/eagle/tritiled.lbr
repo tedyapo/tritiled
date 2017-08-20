@@ -453,6 +453,30 @@
 <smd name="HS" x="0" y="0" dx="1.3" dy="3.3" layer="1"/>
 <wire x1="-0.889" y1="1.651" x2="-0.889" y2="-1.651" width="0.127" layer="21"/>
 </package>
+<package name="100MIL_PAD">
+<smd name="P$1" x="0" y="0" dx="2.54" dy="2.54" layer="1"/>
+</package>
+<package name="CR2354_TABBED">
+<circle x="0" y="0" radius="11.5" width="0.127" layer="21"/>
+<pad name="GND" x="0" y="9" drill="2" diameter="3.81"/>
+<pad name="+3V" x="0" y="-11.5" drill="3" diameter="5.08"/>
+<text x="0.508" y="-3.81" size="1.27" layer="21" font="fixed" ratio="13" rot="R90">&gt;VALUE</text>
+<wire x1="0" y1="6.858" x2="0" y2="5.588" width="0.127" layer="21"/>
+<wire x1="0" y1="-8.89" x2="0" y2="-7.366" width="0.127" layer="21"/>
+<wire x1="-0.762" y1="-8.128" x2="0.762" y2="-8.128" width="0.127" layer="21"/>
+</package>
+<package name="OSLON_3030_LED">
+<smd name="A" x="-1.125" y="0" dx="2.8" dy="0.55" layer="1" rot="R90"/>
+<smd name="C" x="1.125" y="0" dx="2.8" dy="0.55" layer="1" rot="R90"/>
+<smd name="HS" x="0" y="0" dx="2.8" dy="1" layer="1" rot="R90"/>
+<wire x1="-1.5" y1="1.5" x2="0.7" y2="1.5" width="0.1" layer="21"/>
+<wire x1="0.7" y1="1.5" x2="1.5" y2="1.5" width="0.1" layer="21"/>
+<wire x1="1.5" y1="1.5" x2="1.5" y2="-1.5" width="0.1" layer="21"/>
+<wire x1="1.5" y1="-1.5" x2="0.7" y2="-1.5" width="0.1" layer="21"/>
+<wire x1="0.7" y1="-1.5" x2="-1.5" y2="-1.5" width="0.1" layer="21"/>
+<wire x1="-1.5" y1="-1.5" x2="-1.5" y2="1.5" width="0.1" layer="21"/>
+<wire x1="0.7" y1="1.5" x2="0.7" y2="-1.5" width="0.1" layer="21"/>
+</package>
 </packages>
 <symbols>
 <symbol name="P_MOSFET">
@@ -639,9 +663,17 @@
 <gate name="G$1" symbol="ICSP_PAD" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="ICSP_PAD">
+<device name="ROUND" package="ICSP_PAD">
 <connects>
 <connect gate="G$1" pin="P$1" pad="P$2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="100MIL_SQUARE" package="100MIL_PAD">
+<connects>
+<connect gate="G$1" pin="P$1" pad="P$1"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -803,6 +835,15 @@
 <technology name=""/>
 </technologies>
 </device>
+<device name="SSL150" package="OSLON_3030_LED">
+<connects>
+<connect gate="G$1" pin="A" pad="A"/>
+<connect gate="G$1" pin="C" pad="C"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
 </devices>
 </deviceset>
 <deviceset name="R" prefix="R" uservalue="yes">
@@ -897,6 +938,22 @@
 </gates>
 <devices>
 <device name="TABBED" package="CR2477_TABBED">
+<connects>
+<connect gate="G$1" pin="+V" pad="+3V"/>
+<connect gate="G$1" pin="0V" pad="GND"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="CR2354_TABBED" uservalue="yes">
+<gates>
+<gate name="G$1" symbol="CELL" x="0" y="7.62"/>
+</gates>
+<devices>
+<device name="" package="CR2354_TABBED">
 <connects>
 <connect gate="G$1" pin="+V" pad="+3V"/>
 <connect gate="G$1" pin="0V" pad="GND"/>
