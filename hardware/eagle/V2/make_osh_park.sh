@@ -7,7 +7,7 @@ STENCIL_FILES=(GTP)
 
 for BASE_NAME in ${BOARDS[@]}
 do
-    GERBER_DIR=../gerbers/${BASE_NAME}
+    GERBER_DIR=../../gerbers/${BASE_NAME}
     echo processing ${BASE_NAME}
     
     # zip up gerbers required by OSH Park
