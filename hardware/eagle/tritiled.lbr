@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="50" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -924,6 +924,8 @@
 <wire x1="-15.24" y1="-12.7" x2="15.24" y2="-12.7" width="0.254" layer="94"/>
 <wire x1="15.24" y1="-12.7" x2="15.24" y2="12.7" width="0.254" layer="94"/>
 <wire x1="15.24" y1="12.7" x2="-15.24" y2="12.7" width="0.254" layer="94"/>
+<text x="17.78" y="15.24" size="1.778" layer="94">&gt;NAME</text>
+<text x="17.78" y="12.7" size="1.778" layer="94">&gt;VALUE</text>
 </symbol>
 <symbol name="+V">
 <pin name="+3.6V" x="0" y="0" visible="off" length="middle" direction="sup" rot="R90"/>
@@ -985,8 +987,8 @@
 <wire x1="10.16" y1="12.7" x2="10.16" y2="-12.7" width="0.254" layer="94"/>
 <wire x1="10.16" y1="-12.7" x2="-10.16" y2="-12.7" width="0.254" layer="94"/>
 <wire x1="-10.16" y1="-12.7" x2="-10.16" y2="12.7" width="0.254" layer="94"/>
-<text x="12.7" y="12.7" size="1.27" layer="94" font="vector">&gt;NAME</text>
-<text x="12.7" y="10.16" size="1.27" layer="94" font="vector">&gt;VALUE</text>
+<text x="12.7" y="12.7" size="1.778" layer="94" font="vector">&gt;NAME</text>
+<text x="12.7" y="10.16" size="1.778" layer="94" font="vector">&gt;VALUE</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -1330,7 +1332,7 @@
 </device>
 </devices>
 </deviceset>
-<deviceset name="OSLON_SIGNAL">
+<deviceset name="OSLON_SIGNAL" uservalue="yes">
 <gates>
 <gate name="G$1" symbol="LED" x="0" y="0"/>
 </gates>

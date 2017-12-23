@@ -470,22 +470,22 @@ Please make sure your boards conform to these design rules.</description>
 </pass>
 </autorouter>
 <elements>
-<element name="C2" library="tritiled" package="0805" value="" x="17.78" y="12.7" rot="R90"/>
+<element name="C2" library="tritiled" package="0805" value="100n" x="17.78" y="12.7" rot="R90"/>
 <element name="IC1" library="tritiled" package="SOIC8" value="PIC12LF1571" x="21.59" y="12.7"/>
-<element name="Q1" library="tritiled" package="SOT-23" value="" x="12.7" y="8.255"/>
-<element name="U$1" library="tritiled" package="OSLON_3030_LED" value="OSLON_SIGNAL" x="12.7" y="12.7" rot="R180"/>
-<element name="U$2" library="tritiled" package="CR2032_BAT-HLD_001" value="BAT-HLD-001_CR2032" x="12.7" y="12.7" rot="MR270"/>
-<element name="U$5" library="tritiled" package="SRR6028_INDUCTOR" value="" x="4.445" y="12.7"/>
-<element name="R2" library="tritiled" package="R1206" value="" x="12.7" y="20.955"/>
-<element name="C3" library="tritiled" package="1206" value="" x="12.7" y="17.78"/>
-<element name="U$17" library="tritiled" package="SM8" value="74LVC1G123" x="12.7" y="4.445" rot="R90"/>
-<element name="R3" library="tritiled" package="R0603" value="" x="7.62" y="4.445" rot="R180"/>
-<element name="C5" library="tritiled" package="C0603" value="" x="7.62" y="6.985" rot="R180"/>
-<element name="Q2" library="tritiled" package="SOT-23" value="" x="17.78" y="5.08" rot="R90"/>
+<element name="Q1" library="tritiled" package="SOT-23" value="IRLML6244" x="12.7" y="8.255"/>
+<element name="U$1" library="tritiled" package="OSLON_3030_LED" value="Oslon Signal Verde" x="12.7" y="12.7" rot="R180"/>
+<element name="B1" library="tritiled" package="CR2032_BAT-HLD_001" value="BAT-HLD-001_CR2032" x="12.7" y="12.7" rot="MR270"/>
+<element name="L1" library="tritiled" package="SRR6028_INDUCTOR" value="1m" x="4.445" y="12.7"/>
+<element name="R2" library="tritiled" package="R1206" value="100" x="12.7" y="20.955"/>
+<element name="C3" library="tritiled" package="1206" value="10u" x="12.7" y="17.78"/>
+<element name="IC2" library="tritiled" package="SM8" value="74LVC1G123" x="12.7" y="4.445" rot="R90"/>
+<element name="R3" library="tritiled" package="R0603" value="10k" x="7.62" y="4.445" rot="R180"/>
+<element name="C5" library="tritiled" package="C0603" value="100p" x="7.62" y="6.985" rot="R180"/>
+<element name="Q2" library="tritiled" package="SOT-23" value="DMG2305UX" x="17.78" y="5.08" rot="R90"/>
 </elements>
 <signals>
 <signal name="+3.6V">
-<contactref element="U$5" pad="P$1"/>
+<contactref element="L1" pad="P$1"/>
 <contactref element="U$1" pad="C"/>
 <contactref element="IC1" pad="1"/>
 <contactref element="C2" pad="P$1"/>
@@ -522,7 +522,7 @@ Please make sure your boards conform to these design rules.</description>
 <signal name="GND">
 <contactref element="Q1" pad="2"/>
 <contactref element="IC1" pad="8"/>
-<contactref element="U$2" pad="GND"/>
+<contactref element="B1" pad="GND"/>
 <contactref element="C2" pad="P$2"/>
 <contactref element="C3" pad="P$2"/>
 <polygon width="0.3048" layer="1" rank="2">
@@ -537,18 +537,22 @@ Please make sure your boards conform to these design rules.</description>
 <vertex x="25.4" y="25.4"/>
 <vertex x="25.4" y="0"/>
 </polygon>
-<contactref element="U$17" pad="4"/>
+<contactref element="IC2" pad="4"/>
 <via x="17.145" y="15.24" extent="1-16" drill="0.6"/>
 <via x="18.415" y="15.24" extent="1-16" drill="0.6"/>
 <via x="15.24" y="8.255" extent="1-16" drill="0.6"/>
 <via x="15.24" y="6.985" extent="1-16" drill="0.6"/>
 <via x="15.875" y="18.415" extent="1-16" drill="0.6"/>
 <via x="15.875" y="17.145" extent="1-16" drill="0.6"/>
+<contactref element="IC2" pad="1"/>
+<wire x1="14.4" y1="3.47" x2="15.58" y2="3.47" width="0.3048" layer="1"/>
+<wire x1="15.58" y1="3.47" x2="15.875" y2="3.175" width="0.3048" layer="1"/>
+<via x="15.875" y="3.175" extent="1-16" drill="0.35"/>
 </signal>
 <signal name="N$9">
-<contactref element="U$2" pad="+V1" route="any" routetag="G$1.+V"/>
+<contactref element="B1" pad="+V1" route="any" routetag="G$1.+V"/>
 <contactref element="R2" pad="P$2"/>
-<contactref element="U$2" pad="+V2" route="any" routetag="G$1.+V"/>
+<contactref element="B1" pad="+V2" route="any" routetag="G$1.+V"/>
 <polygon width="0.254" layer="1" orphans="yes" thermals="no">
 <vertex x="10.16" y="25.4"/>
 <vertex x="10.16" y="22.86"/>
@@ -571,7 +575,7 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="14.25" y1="23.775" x2="14.25" y2="20.955" width="1.016" layer="1"/>
 </signal>
 <signal name="N$10">
-<contactref element="U$5" pad="P$2"/>
+<contactref element="L1" pad="P$2"/>
 <contactref element="Q1" pad="3"/>
 <contactref element="U$1" pad="A"/>
 <polygon width="0.254" layer="1" orphans="yes" thermals="no">
@@ -589,7 +593,7 @@ Please make sure your boards conform to these design rules.</description>
 <signal name="N$1">
 <contactref element="R3" pad="P$1"/>
 <contactref element="C5" pad="P$1"/>
-<contactref element="U$17" pad="7"/>
+<contactref element="IC2" pad="7"/>
 <wire x1="11" y1="4.12" x2="10.9596" y2="4.1604" width="0.3048" layer="1"/>
 <wire x1="9.58249375" y1="4.1604" x2="9.29789375" y2="4.445" width="0.3048" layer="1"/>
 <wire x1="9.29789375" y1="4.445" x2="8.345" y2="4.445" width="0.3048" layer="1"/>
@@ -598,7 +602,7 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="8.37" y1="4.47" x2="8.37" y2="6.985" width="0.3048" layer="1"/>
 </signal>
 <signal name="N$5">
-<contactref element="U$17" pad="6"/>
+<contactref element="IC2" pad="6"/>
 <contactref element="C5" pad="P$2"/>
 <wire x1="11" y1="4.77" x2="9.835" y2="4.77" width="0.3048" layer="1"/>
 <wire x1="9.835" y1="4.77" x2="9.525" y2="5.08" width="0.3048" layer="1"/>
@@ -610,19 +614,17 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="6.985" y1="7.1" x2="6.87" y2="6.985" width="0.3048" layer="1"/>
 </signal>
 <signal name="N$7">
-<contactref element="U$17" pad="8"/>
+<contactref element="IC2" pad="8"/>
 <contactref element="R3" pad="P$2"/>
 <contactref element="Q2" pad="3"/>
-<contactref element="U$17" pad="3"/>
-<contactref element="U$17" pad="1"/>
+<contactref element="IC2" pad="3"/>
 <wire x1="16.37" y1="4.77" x2="14.4" y2="4.77" width="0.3048" layer="1"/>
 <wire x1="16.37" y1="4.77" x2="16.68" y2="5.08" width="0.3048" layer="1"/>
 <wire x1="14.4" y1="4.77" x2="13.025" y2="4.77" width="0.3048" layer="1"/>
 <wire x1="13.025" y1="4.77" x2="12.7" y2="4.445" width="0.3048" layer="1"/>
 <wire x1="12.7" y1="4.445" x2="12.7" y2="3.81" width="0.3048" layer="1"/>
-<wire x1="12.7" y1="3.81" x2="13.04" y2="3.47" width="0.3048" layer="1"/>
-<wire x1="13.04" y1="3.47" x2="11" y2="3.47" width="0.3048" layer="1"/>
-<wire x1="13.04" y1="3.47" x2="14.4" y2="3.47" width="0.3048" layer="1"/>
+<wire x1="12.7" y1="3.81" x2="12.405" y2="3.47" width="0.3048" layer="1"/>
+<wire x1="12.405" y1="3.47" x2="11" y2="3.47" width="0.3048" layer="1"/>
 <wire x1="11" y1="3.47" x2="9.185" y2="3.47" width="0.3048" layer="1"/>
 <wire x1="9.185" y1="3.47" x2="8.89" y2="3.175" width="0.3048" layer="1"/>
 <wire x1="8.89" y1="3.175" x2="7.62" y2="3.175" width="0.3048" layer="1"/>
@@ -630,7 +632,7 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="6.895" y1="3.9" x2="6.895" y2="4.445" width="0.3048" layer="1"/>
 </signal>
 <signal name="N$2">
-<contactref element="U$17" pad="5"/>
+<contactref element="IC2" pad="5"/>
 <contactref element="Q1" pad="1"/>
 <wire x1="11" y1="5.42" x2="11.75" y2="6.17" width="0.3048" layer="1"/>
 <wire x1="11.75" y1="6.17" x2="11.75" y2="7.155" width="0.3048" layer="1"/>
@@ -644,7 +646,7 @@ Please make sure your boards conform to these design rules.</description>
 </signal>
 <signal name="N$4">
 <contactref element="IC1" pad="3"/>
-<contactref element="U$17" pad="2"/>
+<contactref element="IC2" pad="2"/>
 <wire x1="21.6662" y1="7.6962" x2="22.225" y2="8.255" width="0.3048" layer="1"/>
 <wire x1="21.6662" y1="4.78540625" x2="21.6662" y2="7.6962" width="0.3048" layer="1"/>
 <wire x1="14.4" y1="4.12" x2="16.40841875" y2="4.12" width="0.3048" layer="1"/>
