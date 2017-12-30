@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="1" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -795,6 +795,9 @@
 <wire x1="0" y1="0" x2="0" y2="-1.4" width="0.127" layer="21"/>
 <wire x1="-0.7" y1="-1.4" x2="-0.6" y2="-1.4" width="0.127" layer="21"/>
 </package>
+<package name="HDR_1_PIN">
+<pad name="P$1" x="0" y="0" drill="1" diameter="2.1844" shape="octagon"/>
+</package>
 </packages>
 <symbols>
 <symbol name="P_MOSFET">
@@ -991,6 +994,10 @@
 <wire x1="-10.16" y1="-12.7" x2="-10.16" y2="12.7" width="0.254" layer="94"/>
 <text x="12.7" y="12.7" size="1.778" layer="94" font="vector">&gt;NAME</text>
 <text x="12.7" y="10.16" size="1.778" layer="94" font="vector">&gt;VALUE</text>
+</symbol>
+<symbol name="HDR_1_PIN">
+<pin name="P$1" x="-5.08" y="0" length="middle"/>
+<circle x="0" y="0" radius="2.54" width="0.254" layer="94"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -1454,6 +1461,21 @@
 <connect gate="G$1" pin="Q" pad="5"/>
 <connect gate="G$1" pin="R" pad="7"/>
 <connect gate="G$1" pin="VCC" pad="8"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="HDR_1_PIN">
+<gates>
+<gate name="G$1" symbol="HDR_1_PIN" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="HDR_1_PIN">
+<connects>
+<connect gate="G$1" pin="P$1" pad="P$1"/>
 </connects>
 <technologies>
 <technology name=""/>
