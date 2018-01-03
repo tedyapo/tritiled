@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.2.2">
+<eagle version="8.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="yes"/>
+<setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="12.5" unitdist="mil" unit="mil" style="lines" multiple="1" display="no" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
+<layer number="15" name="Route15" color="4" fill="6" visible="no" active="no"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
 <layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
@@ -18,9 +21,9 @@
 <layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="25" name="tNames" color="7" fill="1" visible="no" active="yes"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
-<layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
@@ -63,6 +66,18 @@
 <text x="8.89" y="17.145" size="1.4224" layer="21" font="fixed" ratio="13" rot="R180">HLED</text>
 <text x="20.6375" y="17.145" size="1.4224" layer="21" font="fixed" ratio="13" rot="R180">V3.0</text>
 <text x="3.4925" y="17.78" size="1.27" layer="21" font="fixed" ratio="13" rot="R180">3</text>
+<dimension x1="10.4775" y1="18.7325" x2="1.27" y2="22.225" x3="1.27" y3="22.225" textsize="1.778" layer="51" dtype="leader"/>
+<dimension x1="11.43" y1="15.875" x2="19.3675" y2="24.4475" x3="19.3675" y3="24.4475" textsize="1.778" layer="51" dtype="leader"/>
+<dimension x1="15.5575" y1="11.43" x2="23.8125" y2="20.6375" x3="23.8125" y3="20.6375" textsize="1.778" layer="51" dtype="leader"/>
+<dimension x1="19.3675" y1="11.43" x2="25.0825" y2="13.335" x3="25.0825" y3="13.335" textsize="1.778" layer="51" dtype="leader"/>
+<dimension x1="16.1925" y1="6.0325" x2="25.0825" y2="7.9375" x3="25.0825" y3="7.9375" textsize="1.778" layer="51" dtype="leader"/>
+<dimension x1="11.43" y1="7.62" x2="20.32" y2="-1.27" x3="20.32" y3="-1.27" textsize="1.778" layer="51" dtype="leader"/>
+<dimension x1="11.43" y1="3.81" x2="0.9525" y2="-1.905" x3="0.9525" y3="-1.905" textsize="1.778" layer="51" dtype="leader"/>
+<dimension x1="6.35" y1="3.81" x2="-6.985" y2="0.635" x3="-6.985" y3="0.635" textsize="1.778" layer="51" dtype="leader"/>
+<dimension x1="6.35" y1="6.0325" x2="-9.525" y2="6.0325" x3="-9.525" y3="6.0325" textsize="1.778" layer="51" dtype="leader"/>
+<dimension x1="4.7625" y1="11.43" x2="-6.6675" y2="17.78" x3="-6.6675" y3="17.78" textsize="1.778" layer="51" dtype="leader"/>
+<dimension x1="11.43" y1="11.43" x2="-3.4925" y2="9.2075" x3="-3.4925" y3="9.2075" textsize="1.778" layer="51" dtype="leader"/>
+<text x="-19.3675" y="8.89" size="1.4224" layer="51">(cathode left)</text>
 </plain>
 <libraries>
 <library name="tritiled">
@@ -74,6 +89,8 @@
 <wire x1="1.375" y1="0.7" x2="1.375" y2="-0.7" width="0.127" layer="21"/>
 <wire x1="1.375" y1="-0.7" x2="-1.375" y2="-0.7" width="0.127" layer="21"/>
 <wire x1="-1.375" y1="-0.7" x2="-1.375" y2="0.7" width="0.127" layer="21"/>
+<text x="3.81" y="1.27" size="1.27" layer="25">&gt;NAME</text>
+<text x="3.81" y="-1.27" size="1.27" layer="27">&gt;VALUE</text>
 </package>
 <package name="1206">
 <smd name="P$1" x="-1.55" y="0" dx="0.9" dy="1.6" layer="1"/>
@@ -144,6 +161,8 @@
 <wire x1="1.4" y1="0.7" x2="1.4" y2="-0.7" width="0.127" layer="21"/>
 <wire x1="1.4" y1="-0.7" x2="-1.4" y2="-0.7" width="0.127" layer="21"/>
 <wire x1="-1.4" y1="-0.7" x2="-1.4" y2="0.7" width="0.127" layer="21"/>
+<text x="2.54" y="1.27" size="1.27" layer="25">&gt;NAME</text>
+<text x="2.54" y="-1.27" size="1.27" layer="27">&gt;VALUE</text>
 </package>
 <package name="R1206">
 <smd name="P$1" x="-1.55" y="0" dx="1.6" dy="1.9" layer="1"/>
@@ -167,6 +186,8 @@
 <wire x1="0.7" y1="-1.5" x2="-1.5" y2="-1.5" width="0.1" layer="21"/>
 <wire x1="-1.5" y1="-1.5" x2="-1.5" y2="1.5" width="0.1" layer="21"/>
 <wire x1="0.7" y1="1.5" x2="0.7" y2="-1.5" width="0.1" layer="21"/>
+<text x="3.81" y="1.27" size="1.27" layer="25">&gt;NAME</text>
+<text x="3.81" y="-1.27" size="1.27" layer="27">&gt;VALUE</text>
 </package>
 <package name="CR2032_BAT-HLD-001-THM">
 <smd name="GND" x="0" y="0" dx="17.78" dy="17.78" layer="1" roundness="100"/>
@@ -332,6 +353,8 @@
 <wire x1="-1.4" y1="0" x2="0" y2="0" width="0.127" layer="21"/>
 <wire x1="0" y1="0" x2="0" y2="-1.4" width="0.127" layer="21"/>
 <wire x1="-0.7" y1="-1.4" x2="-0.6" y2="-1.4" width="0.127" layer="21"/>
+<text x="2.54" y="1.27" size="1.27" layer="25">&gt;NAME</text>
+<text x="2.54" y="-1.27" size="1.27" layer="27">&gt;VALUE</text>
 </package>
 </packages>
 </library>
@@ -416,10 +439,11 @@ Please make sure your boards conform to these design rules.</description>
 <param name="slThermalsForVias" value="0"/>
 <param name="dpMaxLengthDifference" value="10mm"/>
 <param name="dpGapFactor" value="2.5"/>
-<param name="checkGrid" value="0"/>
 <param name="checkAngle" value="1"/>
 <param name="checkFont" value="1"/>
 <param name="checkRestrict" value="1"/>
+<param name="checkStop" value="0"/>
+<param name="checkValues" value="0"/>
 <param name="useDiameter" value="13"/>
 <param name="maxErrors" value="50"/>
 </designrules>
@@ -520,23 +544,56 @@ Please make sure your boards conform to these design rules.</description>
 </pass>
 </autorouter>
 <elements>
-<element name="C2" library="tritiled" package="0805" value="100n" x="15.5575" y="11.43" rot="R90"/>
-<element name="IC1" library="tritiled" package="SOIC8" value="PIC12LF1571" x="19.3675" y="11.43"/>
-<element name="Q1" library="tritiled" package="SOT-23" value="IRLML6244" x="11.43" y="7.62"/>
-<element name="U$1" library="tritiled" package="OSLON_3030_LED" value="OSLON Signal" x="11.43" y="11.43" rot="R180"/>
+<element name="C2" library="tritiled" package="0805" value="1u" x="15.5575" y="11.43" smashed="yes" rot="R90">
+<attribute name="NAME" x="24.4475" y="21.59" size="1.27" layer="25"/>
+<attribute name="VALUE" x="24.13" y="19.3675" size="1.27" layer="27"/>
+</element>
+<element name="IC1" library="tritiled" package="SOIC8" value="PIC12LF1571" x="19.3675" y="11.43" smashed="yes">
+<attribute name="NAME" x="29.5275" y="13.97" size="1.27" layer="25"/>
+<attribute name="VALUE" x="25.7175" y="12.065" size="1.27" layer="27"/>
+</element>
+<element name="Q1" library="tritiled" package="SOT-23" value="IRLML6244" x="11.43" y="7.62" smashed="yes">
+<attribute name="NAME" x="24.13" y="-0.9525" size="1.27" layer="25"/>
+<attribute name="VALUE" x="20.6375" y="-2.8575" size="1.27" layer="27"/>
+</element>
+<element name="D1" library="tritiled" package="OSLON_3030_LED" value="OSLON S.V." x="11.43" y="11.43" smashed="yes" rot="R180">
+<attribute name="NAME" x="-14.9225" y="12.7" size="1.27" layer="25"/>
+<attribute name="VALUE" x="-17.78" y="10.795" size="1.27" layer="27"/>
+</element>
 <element name="B1" library="tritiled" package="CR2032_BAT-HLD-001-THM" value="BAT-HLD-001-THM_CR2032" x="11.43" y="11.43" rot="MR270"/>
-<element name="L1" library="tritiled" package="SRR6028_INDUCTOR" value="1m" x="4.7625" y="11.43"/>
-<element name="R2" library="tritiled" package="R1206" value="100" x="10.4775" y="18.7325"/>
-<element name="C3" library="tritiled" package="1206" value="10u" x="11.43" y="15.875"/>
-<element name="IC2" library="tritiled" package="SM8" value="74LVC1G123" x="11.43" y="3.81" rot="R90"/>
-<element name="R3" library="tritiled" package="R0603" value="10k" x="6.35" y="3.81" rot="R180"/>
-<element name="C5" library="tritiled" package="C0603" value="100p" x="6.35" y="6.0325" rot="R180"/>
-<element name="Q2" library="tritiled" package="SOT-23" value="DMG2305UX" x="16.1925" y="6.0325" rot="R90"/>
+<element name="L1" library="tritiled" package="SRR6028_INDUCTOR" value="1m" x="4.7625" y="11.43" smashed="yes">
+<attribute name="NAME" x="-8.89" y="18.415" size="1.27" layer="25"/>
+<attribute name="VALUE" x="-9.2075" y="16.1925" size="1.27" layer="27"/>
+</element>
+<element name="R2" library="tritiled" package="R1206" value="100" x="10.4775" y="18.7325" smashed="yes">
+<attribute name="NAME" x="-1.5875" y="22.86" size="1.27" layer="25"/>
+<attribute name="VALUE" x="-2.2225" y="20.6375" size="1.27" layer="27"/>
+</element>
+<element name="C3" library="tritiled" package="1206" value="10u" x="11.43" y="15.875" smashed="yes">
+<attribute name="NAME" x="20.6375" y="25.4" size="1.27" layer="25"/>
+<attribute name="VALUE" x="20.0025" y="23.495" size="1.27" layer="27"/>
+</element>
+<element name="IC2" library="tritiled" package="SM8" value="74LVC1G123" x="11.43" y="3.81" smashed="yes" rot="R90">
+<attribute name="NAME" x="-2.8575" y="-1.905" size="1.27" layer="25"/>
+<attribute name="VALUE" x="-6.0325" y="-4.1275" size="1.27" layer="27"/>
+</element>
+<element name="R3" library="tritiled" package="R0603" value="51k" x="6.35" y="3.81" smashed="yes" rot="R180">
+<attribute name="NAME" x="-9.525" y="0.9525" size="1.27" layer="25"/>
+<attribute name="VALUE" x="-10.16" y="-1.27" size="1.27" layer="27"/>
+</element>
+<element name="C5" library="tritiled" package="C0603" value="100p" x="6.35" y="6.0325" smashed="yes" rot="R180">
+<attribute name="NAME" x="-12.065" y="6.35" size="1.27" layer="25"/>
+<attribute name="VALUE" x="-13.0175" y="4.1275" size="1.27" layer="27"/>
+</element>
+<element name="Q2" library="tritiled" package="SOT-23" value="DMG2305UX" x="16.1925" y="6.0325" smashed="yes" rot="R90">
+<attribute name="NAME" x="29.5275" y="8.5725" size="1.27" layer="25"/>
+<attribute name="VALUE" x="25.7175" y="6.6675" size="1.27" layer="27"/>
+</element>
 </elements>
 <signals>
 <signal name="+3.6V">
 <contactref element="L1" pad="P$1"/>
-<contactref element="U$1" pad="C"/>
+<contactref element="D1" pad="C"/>
 <contactref element="IC1" pad="1"/>
 <contactref element="C2" pad="P$1"/>
 <contactref element="R2" pad="P$1"/>
@@ -599,7 +656,7 @@ Please make sure your boards conform to these design rules.</description>
 <via x="14.9225" y="8.5725" extent="1-16" drill="0.6"/>
 <via x="15.875" y="2.2225" extent="1-16" drill="0.35"/>
 </signal>
-<signal name="N$9">
+<signal name="N$9" airwireshidden="yes">
 <contactref element="B1" pad="+V@1"/>
 <contactref element="R2" pad="P$2"/>
 <contactref element="B1" pad="+V@2"/>
@@ -624,7 +681,7 @@ Please make sure your boards conform to these design rules.</description>
 <signal name="N$10">
 <contactref element="L1" pad="P$2"/>
 <contactref element="Q1" pad="3"/>
-<contactref element="U$1" pad="A"/>
+<contactref element="D1" pad="A"/>
 <polygon width="0.254" layer="1" orphans="yes" thermals="no">
 <vertex x="12.7" y="12.7"/>
 <vertex x="13.335" y="12.7"/>
