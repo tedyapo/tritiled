@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.2.2">
+<eagle version="8.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="yes"/>
+<setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
+<layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
+<layer number="15" name="Route15" color="4" fill="6" visible="no" active="no"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="no" active="no"/>
 <layer number="17" name="Pads" color="2" fill="1" visible="no" active="no"/>
 <layer number="18" name="Vias" color="2" fill="1" visible="no" active="no"/>
@@ -72,6 +75,8 @@
 <wire x1="0.7" y1="-1.5" x2="-1.5" y2="-1.5" width="0.1" layer="21"/>
 <wire x1="-1.5" y1="-1.5" x2="-1.5" y2="1.5" width="0.1" layer="21"/>
 <wire x1="0.7" y1="1.5" x2="0.7" y2="-1.5" width="0.1" layer="21"/>
+<text x="3.81" y="1.27" size="1.27" layer="25">&gt;NAME</text>
+<text x="3.81" y="-1.27" size="1.27" layer="27">&gt;VALUE</text>
 </package>
 <package name="CR2032_BAT-HLD-001-THM">
 <smd name="GND" x="0" y="0" dx="17.78" dy="17.78" layer="1" roundness="100"/>
@@ -160,6 +165,8 @@
 <wire x1="1.375" y1="0.7" x2="1.375" y2="-0.7" width="0.127" layer="21"/>
 <wire x1="1.375" y1="-0.7" x2="-1.375" y2="-0.7" width="0.127" layer="21"/>
 <wire x1="-1.375" y1="-0.7" x2="-1.375" y2="0.7" width="0.127" layer="21"/>
+<text x="3.81" y="1.27" size="1.27" layer="25">&gt;NAME</text>
+<text x="3.81" y="-1.27" size="1.27" layer="27">&gt;VALUE</text>
 </package>
 <package name="SRR6028_INDUCTOR">
 <polygon width="0.127" layer="1">
@@ -315,6 +322,8 @@
 <wire x1="1.4" y1="0.7" x2="1.4" y2="-0.7" width="0.127" layer="21"/>
 <wire x1="1.4" y1="-0.7" x2="-1.4" y2="-0.7" width="0.127" layer="21"/>
 <wire x1="-1.4" y1="-0.7" x2="-1.4" y2="0.7" width="0.127" layer="21"/>
+<text x="2.54" y="1.27" size="1.27" layer="25">&gt;NAME</text>
+<text x="2.54" y="-1.27" size="1.27" layer="27">&gt;VALUE</text>
 </package>
 <package name="SM8">
 <smd name="1" x="-0.975" y="-1.7" dx="0.3" dy="1.6" layer="1"/>
@@ -334,6 +343,8 @@
 <wire x1="-1.4" y1="0" x2="0" y2="0" width="0.127" layer="21"/>
 <wire x1="0" y1="0" x2="0" y2="-1.4" width="0.127" layer="21"/>
 <wire x1="-0.7" y1="-1.4" x2="-0.6" y2="-1.4" width="0.127" layer="21"/>
+<text x="2.54" y="1.27" size="1.27" layer="25">&gt;NAME</text>
+<text x="2.54" y="-1.27" size="1.27" layer="27">&gt;VALUE</text>
 </package>
 </packages>
 <symbols>
@@ -712,7 +723,7 @@
 </class>
 </classes>
 <parts>
-<part name="U$1" library="tritiled" deviceset="OSLON_SIGNAL" device="" value="OSLON Signal"/>
+<part name="D1" library="tritiled" deviceset="OSLON_SIGNAL" device="" value="OSLON S.V."/>
 <part name="B1" library="tritiled" deviceset="BAT-HLD-001-THM_CR2032" device=""/>
 <part name="U$3" library="tritiled" deviceset="GND" device=""/>
 <part name="L1" library="tritiled" deviceset="SRR6028_INDUCTOR" device="" value="1m"/>
@@ -723,7 +734,7 @@
 <part name="IC1" library="tritiled" deviceset="PIC12LF1571" device=""/>
 <part name="U$13" library="tritiled" deviceset="GND" device=""/>
 <part name="U$14" library="tritiled" deviceset="+3.0V" device=""/>
-<part name="C2" library="tritiled" deviceset="C" device="0805" value="100n"/>
+<part name="C2" library="tritiled" deviceset="C" device="0805" value="1u"/>
 <part name="U$15" library="tritiled" deviceset="GND" device=""/>
 <part name="U$16" library="tritiled" deviceset="+3.0V" device=""/>
 <part name="R2" library="tritiled" deviceset="R" device="1206" value="100"/>
@@ -732,7 +743,7 @@
 <part name="U$28" library="tritiled" deviceset="+3.0V" device=""/>
 <part name="IC2" library="tritiled" deviceset="74LVC1G123" device=""/>
 <part name="U$22" library="tritiled" deviceset="GND" device=""/>
-<part name="R3" library="tritiled" deviceset="R" device="0603" value="10k"/>
+<part name="R3" library="tritiled" deviceset="R" device="0603" value="51k"/>
 <part name="C5" library="tritiled" deviceset="C" device="0603" value="100p"/>
 <part name="Q2" library="tritiled" deviceset="DMG2305UX" device="SOT23" value="DMG2305UX"/>
 <part name="U$24" library="tritiled" deviceset="+3.0V" device=""/>
@@ -743,7 +754,7 @@
 <plain>
 </plain>
 <instances>
-<instance part="U$1" gate="G$1" x="76.2" y="63.5" rot="MR180"/>
+<instance part="D1" gate="G$1" x="76.2" y="63.5" rot="MR180"/>
 <instance part="B1" gate="G$1" x="-193.04" y="33.02"/>
 <instance part="U$3" gate="G$1" x="-193.04" y="20.32"/>
 <instance part="L1" gate="G$1" x="55.88" y="63.5" smashed="yes">
@@ -792,7 +803,7 @@
 <pinref part="U$10" gate="G$1" pin="+3.6V"/>
 <pinref part="L1" gate="G$1" pin="1"/>
 <wire x1="55.88" y1="86.36" x2="55.88" y2="78.74" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="C"/>
+<pinref part="D1" gate="G$1" pin="C"/>
 <wire x1="55.88" y1="78.74" x2="55.88" y2="71.12" width="0.1524" layer="91"/>
 <wire x1="76.2" y1="71.12" x2="76.2" y2="78.74" width="0.1524" layer="91"/>
 <wire x1="76.2" y1="78.74" x2="55.88" y2="78.74" width="0.1524" layer="91"/>
@@ -874,7 +885,7 @@
 <segment>
 <pinref part="L1" gate="G$1" pin="2"/>
 <pinref part="Q1" gate="G$1" pin="D"/>
-<pinref part="U$1" gate="G$1" pin="A"/>
+<pinref part="D1" gate="G$1" pin="A"/>
 <wire x1="76.2" y1="55.88" x2="76.2" y2="50.8" width="0.1524" layer="91"/>
 <wire x1="76.2" y1="50.8" x2="55.88" y2="50.8" width="0.1524" layer="91"/>
 <junction x="55.88" y="50.8"/>
