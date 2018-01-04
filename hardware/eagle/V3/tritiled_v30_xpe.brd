@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.2.2">
+<eagle version="8.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="yes"/>
+<setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="12.5" unitdist="mil" unit="mil" style="lines" multiple="1" display="no" altdistance="5" altunitdist="mil" altunit="mil"/>
@@ -415,10 +416,11 @@ Please make sure your boards conform to these design rules.</description>
 <param name="slThermalsForVias" value="0"/>
 <param name="dpMaxLengthDifference" value="10mm"/>
 <param name="dpGapFactor" value="2.5"/>
-<param name="checkGrid" value="0"/>
 <param name="checkAngle" value="1"/>
 <param name="checkFont" value="1"/>
 <param name="checkRestrict" value="1"/>
+<param name="checkStop" value="0"/>
+<param name="checkValues" value="0"/>
 <param name="useDiameter" value="13"/>
 <param name="maxErrors" value="50"/>
 </designrules>
@@ -528,7 +530,7 @@ Please make sure your boards conform to these design rules.</description>
 <element name="R2" library="tritiled" package="R1206" value="100" x="10.4775" y="18.7325"/>
 <element name="C3" library="tritiled" package="1206" value="10u" x="11.43" y="15.875"/>
 <element name="IC2" library="tritiled" package="SM8" value="74LVC1G123" x="11.43" y="3.81" rot="R90"/>
-<element name="R3" library="tritiled" package="R0603" value="10k" x="6.35" y="3.81" rot="R180"/>
+<element name="R3" library="tritiled" package="R0603" value="59k" x="6.35" y="3.81" rot="R180"/>
 <element name="C5" library="tritiled" package="C0603" value="100p" x="6.35" y="6.0325" rot="R180"/>
 <element name="Q2" library="tritiled" package="SOT-23" value="DMG2305UX" x="16.1925" y="6.0325" rot="R90"/>
 </elements>
