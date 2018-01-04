@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.2.2">
+<eagle version="8.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="yes"/>
+<setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
@@ -893,7 +894,7 @@
 <part name="U$28" library="tritiled" deviceset="+3.0V" device=""/>
 <part name="IC2" library="tritiled" deviceset="74LVC1G123" device=""/>
 <part name="U$22" library="tritiled" deviceset="GND" device=""/>
-<part name="R3" library="tritiled" deviceset="R" device="0603" value="10k"/>
+<part name="R3" library="tritiled" deviceset="R" device="0603" value="59k"/>
 <part name="C5" library="tritiled" deviceset="C" device="0603" value="100p"/>
 <part name="Q2" library="tritiled" deviceset="DMG2305UX" device="SOT23" value="DMG2305UX"/>
 <part name="U$24" library="tritiled" deviceset="+3.0V" device=""/>
