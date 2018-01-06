@@ -1,6 +1,9 @@
 ;;;
 ;;; assembly routines for High-Endurance Flash (HEF) access
 ;;;
+;;; Copyright (C) 2018 Theodore C. Yapo
+;;; Released under MIT License (see file)
+;;; 
 #include <xc.inc>  
 #include <pic12lf1571.inc>
 
