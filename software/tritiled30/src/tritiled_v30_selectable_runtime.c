@@ -88,9 +88,6 @@ const uint8_t mode_idx_placeholder[FLASH_PAGE_SIZE] __at(MODE_IDX_ADDR) = {0};
 #define DUTY_CYCLE2  1
 #define OFFSET_COUNT 1
 
-// selected run-time mode index
-uint16_t mode_idx;
-
 // declare ASM helper function for reading from flash
 extern void read_hef(void);
 #pragma regsused read_hef wreg status bsr
@@ -170,6 +167,9 @@ void pulse(uint8_t length)
 }
 
 int main(int argc, char** argv) {
+  // selected run-time mode index
+  uint16_t mode_idx;
+
   mode_idx = read_mode_idx(); // get current mode from high-endurance flash
   setup();
   
@@ -200,11 +200,11 @@ int main(int argc, char** argv) {
         SLEEP();
       }
     }
+    write_mode_idx(mode_idx);   // store selected mode to high-endurance flash
   }
 
   // exit run-time selection mode
   nPOR = 1;                   // exit startup mode
-  write_mode_idx(mode_idx);   // store selected mode to high-endurance flash
   WDTCONbits.WDTPS = 0b10010; // 256s WDT timeout to wake and refresh RAM    
   start_pwm(mode_idx);
   SLEEP();                    // PWMs run in sleep, pulsing LED
