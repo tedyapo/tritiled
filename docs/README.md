@@ -1,6 +1,6 @@
 Overview
 ========
-TritiLEDs are optimized LED glow markers designed to last for multiple years on a single lithium coin cell.  They can be used wherever you need to mark something in the dark - my first application was marking telescope tripod legs so I wouldn't trip over them.  The 3.0 release is now available.  This release is software-tunable to run from 1-10 years on a CR2032 cell, and fits into inexpensive "5g" polystyrene cosmetic jars for weatherproofing:
+TritiLEDs are optimized LED glow markers designed to last for multiple years on a single lithium coin cell.  They can be used wherever you need to mark something in the dark - my first application was marking telescope tripod legs so I wouldn't trip over them.  The 3.0 release is now available.  This release is software-tunable to run from 1-10 years (and possibly up 20) on a CR2032 cell, and fits into inexpensive "5g" polystyrene cosmetic jars for weatherproofing:
 ![TritiLED V3.0](/docs/images/first_v3_in_jar.jpg "TritiLED V3.0")
 
 The older V2.2 release can either run for more than 2.5 years on a CR2032 cell at a very visible brightness with selectable blinking modes, or can be programmed to run for more than 5 years at a lower intensity. Here's a picture of two V2.2 boards, one in a 3D-printed case: 
