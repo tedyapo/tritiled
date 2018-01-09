@@ -64,7 +64,7 @@
 <plain>
 <circle x="11.43" y="11.43" radius="11.43" width="0.254" layer="20"/>
 <text x="8.89" y="17.145" size="1.4224" layer="21" font="fixed" ratio="13" rot="R180">HLED</text>
-<text x="20.6375" y="17.145" size="1.4224" layer="21" font="fixed" ratio="13" rot="R180">V3.0</text>
+<text x="20.6375" y="17.145" size="1.4224" layer="21" font="fixed" ratio="13" rot="R180">V3.1</text>
 <text x="3.4925" y="17.78" size="1.27" layer="21" font="fixed" ratio="13" rot="R180">3</text>
 </plain>
 <libraries>
