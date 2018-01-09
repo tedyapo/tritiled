@@ -7,7 +7,7 @@
 <setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="50" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -22,9 +22,9 @@
 <layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
 <layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
@@ -46,7 +46,7 @@
 <layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
 <layer number="48" name="Document" color="7" fill="1" visible="no" active="yes"/>
 <layer number="49" name="Reference" color="7" fill="1" visible="no" active="yes"/>
-<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="no" active="yes"/>
 <layer number="52" name="bDocu" color="7" fill="1" visible="no" active="yes"/>
 <layer number="90" name="Modules" color="5" fill="1" visible="yes" active="yes"/>
 <layer number="91" name="Nets" color="2" fill="1" visible="yes" active="yes"/>
@@ -807,6 +807,45 @@
 <package name="HDR_1_PIN">
 <pad name="P$1" x="0" y="0" drill="1" diameter="2.1844" shape="octagon"/>
 </package>
+<package name="SWITCH_2616">
+<smd name="A@1" x="-1.325" y="0.375" dx="0.55" dy="0.55" layer="1"/>
+<smd name="A@2" x="-1.325" y="-0.375" dx="0.55" dy="0.55" layer="1"/>
+<smd name="B@1" x="1.325" y="0.375" dx="0.55" dy="0.55" layer="1"/>
+<smd name="B@2" x="1.325" y="-0.375" dx="0.55" dy="0.55" layer="1"/>
+<circle x="0" y="0.006184375" radius="0.398646875" width="0.127" layer="21"/>
+<wire x1="-0.95883125" y1="0.01236875" x2="-0.95883125" y2="0.216509375" width="0.127" layer="21"/>
+<wire x1="-0.95883125" y1="0.216509375" x2="-0.4144625" y2="0.74231875" width="0.127" layer="21" curve="-90"/>
+<wire x1="-0.4144625" y1="0.74231875" x2="0.420646875" y2="0.74231875" width="0.127" layer="21"/>
+<wire x1="0.420646875" y1="0.74231875" x2="0.958828125" y2="0.16701875" width="0.127" layer="21" curve="-93.818646"/>
+<wire x1="0.958828125" y1="0.16701875" x2="0.958828125" y2="-0.167025" width="0.127" layer="21"/>
+<wire x1="0.958828125" y1="-0.167025" x2="0.402090625" y2="-0.7237625" width="0.127" layer="21" curve="-90"/>
+<wire x1="0.402090625" y1="-0.7237625" x2="-0.43920625" y2="-0.7237625" width="0.127" layer="21"/>
+<wire x1="-0.43920625" y1="-0.7237625" x2="-0.95883125" y2="-0.222696875" width="0.127" layer="21" curve="-87.916934"/>
+<wire x1="-0.95883125" y1="-0.222696875" x2="-0.95883125" y2="0.006184375" width="0.127" layer="21" curve="-4.166158"/>
+<wire x1="-0.8784125" y1="0.915525" x2="0.884596875" y2="0.915525" width="0.127" layer="21"/>
+<wire x1="0.884596875" y1="0.915525" x2="1.020690625" y2="0.7237625" width="0.127" layer="21"/>
+<wire x1="1.014503125" y1="-0.7237625" x2="0.890784375" y2="-0.890784375" width="0.127" layer="21"/>
+<wire x1="0.890784375" y1="-0.890784375" x2="-0.8846" y2="-0.8846" width="0.127" layer="21"/>
+<wire x1="-0.8846" y1="-0.8846" x2="-1.008315625" y2="-0.717578125" width="0.127" layer="21"/>
+<wire x1="-1.0206875" y1="0.717571875" x2="-0.8784125" y2="0.909340625" width="0.127" layer="21"/>
+<wire x1="-1.020690625" y1="0.828921875" x2="-1.274315625" y2="0.828921875" width="0.127" layer="21"/>
+<wire x1="-1.274315625" y1="-0.81036875" x2="-0.971203125" y2="-0.81036875" width="0.127" layer="21"/>
+<wire x1="0.94645625" y1="-0.816553125" x2="1.255759375" y2="-0.816553125" width="0.127" layer="21"/>
+<wire x1="1.249575" y1="0.828921875" x2="0.983571875" y2="0.828921875" width="0.127" layer="21"/>
+</package>
+<package name="SWITCH_3020">
+<smd name="A" x="-1.625" y="0" dx="0.55" dy="1.5" layer="1"/>
+<smd name="B" x="1.625" y="0" dx="0.55" dy="1.5" layer="1"/>
+<wire x1="-1.5" y1="1" x2="1.5" y2="1" width="0.127" layer="21"/>
+<wire x1="1.5" y1="1" x2="1.5" y2="0.8" width="0.127" layer="21"/>
+<wire x1="-1.5" y1="1" x2="-1.5" y2="0.8" width="0.127" layer="21"/>
+<wire x1="-1.5" y1="-0.8" x2="-1.5" y2="-1" width="0.127" layer="21"/>
+<wire x1="-1.5" y1="-1" x2="1.5" y2="-1" width="0.127" layer="21"/>
+<wire x1="1.5" y1="-1" x2="1.5" y2="-0.8" width="0.127" layer="21"/>
+<circle x="0" y="0" radius="0.6" width="0.127" layer="21"/>
+<text x="2.54" y="2.54" size="1.27" layer="25">&gt;NAME</text>
+<text x="2.54" y="0" size="1.27" layer="27">&gt;VALUE</text>
+</package>
 </packages>
 <symbols>
 <symbol name="P_MOSFET">
@@ -1076,6 +1115,24 @@
 <connects>
 <connect gate="G$1" pin="P$1" pad="P$1 P$2"/>
 <connect gate="G$1" pin="P$2" pad="P$3 P$4"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="2616" package="SWITCH_2616">
+<connects>
+<connect gate="G$1" pin="P$1" pad="A@1 A@2"/>
+<connect gate="G$1" pin="P$2" pad="B@1 B@2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="3020" package="SWITCH_3020">
+<connects>
+<connect gate="G$1" pin="P$1" pad="A"/>
+<connect gate="G$1" pin="P$2" pad="B"/>
 </connects>
 <technologies>
 <technology name=""/>
