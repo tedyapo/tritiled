@@ -166,7 +166,8 @@ void pulse(uint8_t length)
   }
 }
 
-int main(int argc, char** argv) {
+int main(int argc, char** argv)
+{
   // selected run-time mode index
   uint16_t mode_idx;
 
@@ -180,26 +181,40 @@ int main(int argc, char** argv) {
 
     mode_idx = DEFAULT_MODE_IDX;
     IOCAN      = 0b001000;      // flag negative RA3 edge detections
-    WDTCONbits.WDTPS = 0b01001; // 512ms timeout for blinks  
+    IOCIE = 1; // enable IOC interrupts, but just wake from sleep (GIE=0)
     
     for (cycle = 0; cycle < N_CYCLES; ++cycle){
       for (timeout_count = 0; timeout_count < period_table[mode_idx].years + 3;
            ++timeout_count){
-        // if button press was detected, increment mode
-        if (IOCAF3){
+        // while button presses detected, increment mode
+        uint8_t button_pressed = 0;
+        while (IOCAF3){
+          IOCIE = 0; // disable IOC interrupts; don't wake during debounce
+          WDTCONbits.WDTPS = 0b00110; // 64ms timeout for switch debounce
+          SLEEP();    // debounce switch
+          IOCAF3 = 0; // discard any switch bounce
+          IOCIE = 1;  // enable IOC interrupts, but just wake from sleep
+          // switch must be released to count
+          if (!RA3){
+            button_pressed = 1;
+            mode_idx = (mode_idx + 1) % N_MODES;
+            WDTCONbits.WDTPS = 0b01010; // 1024ms timeout for pause
+            SLEEP();
+          }
+        }
+        if (button_pressed){
           cycle--;
-          mode_idx = (mode_idx + 1) % N_MODES;
-          SLEEP();
-          SLEEP();
-          IOCAF3 = 0;
           break;
         }
         if (timeout_count < period_table[mode_idx].years){
           pulse(N_PULSES);
         }
+        WDTCONbits.WDTPS = 0b01001; // 512ms timeout for blinks
         SLEEP();
       }
     }
+    IOCIE = 0; // disable IOC interrupts
+    IOCAN = 0b000000;      // disable negative RA3 edge detections
     write_mode_idx(mode_idx);   // store selected mode to high-endurance flash
   }
 
