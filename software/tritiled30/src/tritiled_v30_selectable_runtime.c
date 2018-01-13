@@ -15,10 +15,10 @@
 //
 
 // number of cyles of blinks to show before exiting config mode
-#define N_CYCLES 10
+#define N_CYCLES 3
 
 // number of pulses per "blink" in config mode, higher = brighter blinks
-#define N_PULSES 10
+#define N_PULSES 15
 
 // year run-times and corresponding PWM periods
 #define N_MODES 10
@@ -29,7 +29,7 @@ struct run_time
 };
 
 // Note: frequencies converted to pwm periods
-const struct run_time period_table[N_MODES] =
+struct run_time period_table[N_MODES] =
   {{1, (int)(31000./325.65 + 0.5)},
    {2, (int)(31000./154.68 + 0.5)},
    {3, (int)(31000./97.69 + 0.5)},
@@ -43,7 +43,7 @@ const struct run_time period_table[N_MODES] =
   };
 
 // default mode index 
-#define DEFAULT_MODE_IDX 1
+#define DEFAULT_MODE_IDX 0
 
 //
 // ======= end of configurable parameters =======
@@ -137,16 +137,16 @@ void setup()
   WPUA       = 0b00001000; // WPU on RA3
 }
 
-void start_pwm(uint16_t mode_idx)
+void start_pwm(uint8_t mode_idx)
 {
   APFCON     = 0b00000011;    // select PWM1 on RA5, PWM2 on RA4
   PWM2OFCON  = 0b00100001;    // PWM2 triggered with PWM1
+  PWM1PR     = period_table[mode_idx].pwm_period;
+  PWM2PR     = period_table[mode_idx].pwm_period;
   PWM1PH     = PHASE1;
   PWM2PH     = PHASE2;
   PWM1DC     = DUTY_CYCLE1;
   PWM2DC     = DUTY_CYCLE2;
-  PWM1PR     = period_table[mode_idx].pwm_period;
-  PWM2PR     = period_table[mode_idx].pwm_period;
   PWM1OF     = OFFSET_COUNT;
   PWMLD      = 0b00000011;
   PWM2CLKCON = 0b00000010;
@@ -154,6 +154,12 @@ void start_pwm(uint16_t mode_idx)
   PWM1OFCON  = 0b00000000;
   PWM1CON    = 0b11010000;
   PWM2CON    = 0b11000000;
+
+}
+
+void stop_pwm()
+{
+  APFCON     = 0b00000000;    // RA4, RA5 normal GPIO
 }
 
 // pulse quickly a number of times to make a bright blink
@@ -169,50 +175,53 @@ void pulse(uint8_t length)
 int main(int argc, char** argv)
 {
   // selected run-time mode index
-  uint16_t mode_idx;
+  uint8_t mode_idx;
 
   mode_idx = read_mode_idx(); // get current mode from high-endurance flash
   setup();
   
   // enter run-time selection mode on power-on reset
   if (!nPOR){
-    uint16_t timeout_count;
-    uint16_t cycle;
+    uint8_t cycle = N_CYCLES;
 
     mode_idx = DEFAULT_MODE_IDX;
     IOCAN      = 0b001000;      // flag negative RA3 edge detections
-    IOCIE = 1; // enable IOC interrupts, but just wake from sleep (GIE=0)
-    
-    for (cycle = 0; cycle < N_CYCLES; ++cycle){
-      for (timeout_count = 0; timeout_count < period_table[mode_idx].years + 3;
-           ++timeout_count){
-        // while button presses detected, increment mode
-        uint8_t button_pressed = 0;
-        while (IOCAF3){
-          IOCIE = 0; // disable IOC interrupts; don't wake during debounce
-          WDTCONbits.WDTPS = 0b00110; // 64ms timeout for switch debounce
-          SLEEP();    // debounce switch
-          IOCAF3 = 0; // discard any switch bounce
-          IOCIE = 1;  // enable IOC interrupts, but just wake from sleep
-          // switch must be released to count
-          if (!RA3){
-            button_pressed = 1;
-            mode_idx = (mode_idx + 1) % N_MODES;
-            WDTCONbits.WDTPS = 0b01010; // 1024ms timeout for pause
-            SLEEP();
+
+    do {
+      IOCIE = 1; // enable IOC interrupts, but just wake from sleep (GIE=0)
+      start_pwm(mode_idx);  // preview brightness
+      WDTCONbits.WDTPS = 0b01100; // 4s timeout for brightness preview
+      SLEEP();
+      if (IOCAF3){
+        IOCIE = 0; // disable IOC interrupts; don't wake during debounce
+        WDTCONbits.WDTPS = 0b00110; // 64ms timeout for switch debounce
+        SLEEP();    // debounce switch
+        IOCAF3 = 0; // discard any switch bounce
+        IOCIE = 1; // enable IOC interrupts for wake
+        // switch must be released to count
+        if (!RA3){
+          mode_idx++;
+          if (mode_idx == N_MODES){
+            mode_idx = 0;
           }
+          cycle = N_CYCLES;
         }
-        if (button_pressed){
-          cycle--;
-          break;
-        }
-        if (timeout_count < period_table[mode_idx].years){
-          pulse(N_PULSES);
-        }
+      } else {
+        // blink out years of runtime
+        cycle--;
+        uint8_t blink_count;
+        IOCIE = 0; // disable IOC interrupts; don't wake during blinks
+        stop_pwm();
         WDTCONbits.WDTPS = 0b01001; // 512ms timeout for blinks
         SLEEP();
+        for (blink_count = 0;
+             blink_count < period_table[mode_idx].years;
+             ++blink_count){
+          pulse(N_PULSES);
+          SLEEP();
+        }
       }
-    }
+    } while (cycle > 0);
     IOCIE = 0; // disable IOC interrupts
     IOCAN = 0b000000;      // disable negative RA3 edge detections
     write_mode_idx(mode_idx);   // store selected mode to high-endurance flash
