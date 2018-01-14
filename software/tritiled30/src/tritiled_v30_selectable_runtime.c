@@ -97,7 +97,11 @@ uint16_t read_mode_idx()
 {
   PMADR = MODE_IDX_ADDR;
   read_hef();
-  return PMDAT % N_MODES;
+  uint16_t value = PMDAT;
+  while (value > N_MODES){
+    value -= N_MODES;
+  }
+  return value;
 }
 
 // declare ASM helper function for writing to flash
