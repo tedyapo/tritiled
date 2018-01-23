@@ -20,34 +20,19 @@
 // number of pulses per "blink" in config mode, higher = brighter blinks
 #define N_PULSES 15
 
-// year run-times and corresponding PWM periods
-#define N_MODES 10
-struct run_time
-{
-  uint8_t years;       // number of years of run-time or mode number
-  uint16_t pwm_period; // PWM period (in units of 1/31000 s)
-};
-
-// Note: frequencies converted to pwm periods
-struct run_time period_table[N_MODES] =
-  {{1, (int)(31000./325.65 + 0.5)},
-   {2, (int)(31000./154.68 + 0.5)},
-   {3, (int)(31000./97.69 + 0.5)},
-   {4, (int)(31000./69.2 + 0.5)},
-   {5, (int)(31000./52.1 + 0.5)},
-   {6, (int)(31000./40.7 + 0.5)},
-   {7, (int)(31000./32.56 + 0.5)},
-   {8, (int)(31000./26.45 + 0.5)},
-   {9, (int)(31000./21.7 + 0.5)},
-   {10, (int)(31000./17.9 + 0.5)}
-  };
-
 // default mode index 
 #define DEFAULT_MODE_IDX 0
 
 //
 // ======= end of configurable parameters =======
 //
+
+struct run_time
+{
+  uint8_t years;       // number of years of run-time or mode number
+  uint16_t pwm_period; // PWM period (in units of 1/31000 s)
+};
+#include "modes.h"
 
 // CONFIG1
 #pragma config FOSC = INTOSC    // (INTOSC oscillator; I/O function on CLKIN pin)
