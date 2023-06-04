@@ -1,0 +1,2 @@
+generated with the standalone version of https://github.com/openscopeproject/InteractiveHtmlBom against the eagle .brd files.
+The ibom_tritiled_v31_xpe_mod.html is modified to have a 1uF decoupling capacitor at C2 (in the eagle file is 100nF).
